@@ -1,0 +1,82 @@
+# Project information
+site_name: Vitkovice platform dokumentace
+site_url: https://docapi.danse.tech
+site_author: Lukáš Orčík
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project
+
+# Repository
+repo_name: doc-vitkovice-platform
+repo_url: https://github.com/Hardys-Digital/doc-vitkovice-platform
+
+# Copyright
+copyright: Copyright &copy; 2021 Lukáš Orčík - Hardys Digital
+
+theme:
+  name: 'material'
+  language: cs
+
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Přepnut do nočního režimu
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Přepnut do denního režimu
+
+  features:
+    - navigation.top
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - git-revision-date-localized:
+      type: timeago
+      timezone: Europe/Prague
+      locale: cs
+      fallback_to_build_date: false
+      enable_creation_date: false
+  - search:
+      prebuild_index: true
+      lang:
+        - en
+  - minify:
+      minify_html: true
+  - mermaid2
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - def_list
+  - meta
+  - md_in_html
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+extra:
+  generator: false
+
+nav:
+  - Domov:
+    - Úvod: index.md
+    - Changelog: changelog.md
+  - Team:
+    - Úkoly: team/ukoly.md
